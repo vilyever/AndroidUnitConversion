@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.vilyever.vdcontextholder.VDContextHolder;
 import com.vilyever.vdunitconversion.VDDimenConversion;
 import com.vilyever.vdunitconversion.VDTimeUnit;
 
@@ -15,15 +16,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        VDContextHolder.initial(getApplicationContext());
+
         VDTimeUnit timeUnit = new VDTimeUnit(41891564);
         System.out.println("time " + timeUnit);
         System.out.println("time " + timeUnit.toString(VDTimeUnit.VDTimeCategory.Hour, VDTimeUnit.VDTimeCategory.Millisecond));
         System.out.println("time " + timeUnit.toString(VDTimeUnit.VDTimeCategory.Second, VDTimeUnit.VDTimeCategory.Hour));
 
         int px = VDDimenConversion.dpToPixel(18);
-        int dp = VDDimenConversion.pixelToDp(18);
-        px = VDDimenConversion.spToPixel(18);
-        int sp = VDDimenConversion.pixelToSp(18);
+        int dp = VDDimenConversion.pixelToDp(px);
+        System.out.println("px " + px + " : dp " + dp);
+        px = VDDimenConversion.spToPixel(20);
+        int sp = VDDimenConversion.pixelToSp(px);
+        System.out.println("px " + px + " : sp " + sp);
+
     }
 
     @Override
