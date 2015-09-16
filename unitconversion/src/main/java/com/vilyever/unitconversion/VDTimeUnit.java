@@ -1,4 +1,4 @@
-package com.vilyever.vdunitconversion;
+package com.vilyever.unitconversion;
 
 /**
  * VDTimeUnit

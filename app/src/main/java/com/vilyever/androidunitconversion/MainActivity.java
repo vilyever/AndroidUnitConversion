@@ -6,8 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.vilyever.vdcontextholder.VDContextHolder;
-import com.vilyever.vdunitconversion.VDDimenConversion;
-import com.vilyever.vdunitconversion.VDTimeUnit;
+import com.vilyever.unitconversion.VDDimenConversion;
+import com.vilyever.unitconversion.VDTimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 

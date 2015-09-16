@@ -1,8 +1,8 @@
-package com.vilyever.vdunitconversion;
+package com.vilyever.unitconversion;
 
 import android.util.DisplayMetrics;
 
-import com.vilyever.vdcontextholder.VDContextHolder;
+import com.vilyever.contextholder.VDContextHolder;
 
 /**
  * VDDimenConversion

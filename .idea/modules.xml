@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidUnitConversion.iml" filepath="$PROJECT_DIR$/AndroidUnitConversion.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vdunitconversion/vdunitconversion.iml" filepath="$PROJECT_DIR$/vdunitconversion/vdunitconversion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unitconversion/unitconversion.iml" filepath="$PROJECT_DIR$/unitconversion/unitconversion.iml" />
     </modules>
   </component>
 </project>

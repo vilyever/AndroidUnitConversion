@@ -19,7 +19,7 @@ Step 2. Add the dependency in the form
 
 ```gradle
 dependencies {
-  compile 'com.github.vilyever:AndroidUnitConversion:1.0.0'
+  compile 'com.github.vilyever:AndroidUnitConversion:1.0.1'
 }
 ```
 

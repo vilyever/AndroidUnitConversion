@@ -1,4 +1,4 @@
-package com.vilyever.vdunitconversion;
+package com.vilyever.unitconversion;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
