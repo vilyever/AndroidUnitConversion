@@ -1,11 +1,11 @@
 package com.vilyever.androidunitconversion;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.vilyever.vdcontextholder.VDContextHolder;
+import com.vilyever.contextholder.VDContextHolder;
 import com.vilyever.unitconversion.VDDimenConversion;
 import com.vilyever.unitconversion.VDTimeUnit;
 
@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         VDTimeUnit timeUnit = new VDTimeUnit(41891564);
         System.out.println("time " + timeUnit);
-        System.out.println("time " + timeUnit.toString(VDTimeUnit.VDTimeCategory.Hour, VDTimeUnit.VDTimeCategory.Millisecond));
-        System.out.println("time " + timeUnit.toString(VDTimeUnit.VDTimeCategory.Second, VDTimeUnit.VDTimeCategory.Hour));
+        System.out.println("time " + timeUnit.convertToString(VDTimeUnit.VDTimeCategory.Hour, VDTimeUnit.VDTimeCategory.Millisecond));
+        System.out.println("time " + timeUnit.convertToString(VDTimeUnit.VDTimeCategory.Second, VDTimeUnit.VDTimeCategory.Hour));
 
         int px = VDDimenConversion.dpToPixel(18);
         int dp = VDDimenConversion.pixelToDp(px);

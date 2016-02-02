@@ -9,14 +9,7 @@ package com.vilyever.unitconversion;
 public class VDTimeUnit {
     private final VDTimeUnit self = this;
 
-    long totalMilliseconds;
-
-    public long milliseconds;
-    public long seconds;
-    public long minutes;
-    public long hours;
-
-    /* #Constructors */
+    /* Constructors */
     public VDTimeUnit() {
         this(0);
     }
@@ -25,36 +18,18 @@ public class VDTimeUnit {
         setTotalMilliseconds(totalMilliseconds);
     }
 
-    /* #Overrides */
-    @Override
-    public String toString() {
-        return toString(VDTimeCategory.Hour, VDTimeCategory.Millisecond);
-    }
-    
-    /* #Accessors */
-    public long getTotalMilliseconds() {
-        return totalMilliseconds;
-    }
-
-    public void setTotalMilliseconds(long totalMilliseconds) {
-        this.totalMilliseconds = totalMilliseconds;
-
-        this.milliseconds = totalMilliseconds % 1000;
-        this.seconds = totalMilliseconds / 1000 % 60;
-        this.milliseconds = totalMilliseconds / 1000 / 60 % 60;
-        this.hours = totalMilliseconds / 1000 / 60 / 60;
-    }
-     
-    /* #Delegates */     
-     
-    /* #Private Methods */    
-    
-    /* #Public Methods */
-    public String toString(VDTimeCategory fromCategory, VDTimeCategory toCategory) {
+    /* Public Methods */
+    /**
+     * 转换时间为string
+     * @param fromCategory 从哪个时间单位开始转换
+     * @param toCategory 到哪个时间单位结束
+     * @return 时间字符串
+     */
+    public String convertToString(VDTimeCategory fromCategory, VDTimeCategory toCategory) {
         StringBuilder builder = new StringBuilder("");
         for (int i = 0; i < VDTimeCategory.values().length; i++) {
             if ((i >= fromCategory.ordinal() && i <= toCategory.ordinal())
-                || (i <= fromCategory.ordinal() && i >= toCategory.ordinal())) {
+                    || (i <= fromCategory.ordinal() && i >= toCategory.ordinal())) {
                 VDTimeCategory category = VDTimeCategory.values()[i];
                 switch (category) {
                     case Hour:
@@ -84,13 +59,68 @@ public class VDTimeUnit {
         return builder.toString();
     }
 
-    /* #Classes */
+    /* Properties */
+    /**
+     * 总毫秒
+     * 仅提供总毫秒设置来变更所有属性
+     */
+    private long totalMilliseconds;
+    private VDTimeUnit setTotalMilliseconds(long totalMilliseconds) {
+        this.totalMilliseconds = totalMilliseconds;
 
-    /* #Interfaces */     
-     
-    /* #Annotations @interface */    
-    
-    /* #Enums */
+        self.setMilliseconds(totalMilliseconds % 1000);
+        self.setSeconds(totalMilliseconds / 1000 % 60);
+        self.setMinutes(totalMilliseconds / 1000 / 60 % 60);
+        self.setHours(totalMilliseconds / 1000 / 60 / 60);
+        return this;
+    }
+    private long getTotalMilliseconds() {
+        return totalMilliseconds;
+    }
+
+    private long milliseconds;
+    private VDTimeUnit setMilliseconds(long milliseconds) {
+        this.milliseconds = milliseconds;
+        return this;
+    }
+    public long getMilliseconds() {
+        return milliseconds;
+    }
+
+    private long seconds;
+    private VDTimeUnit setSeconds(long seconds) {
+        this.seconds = seconds;
+        return this;
+    }
+    public long getSeconds() {
+        return seconds;
+    }
+
+    private long minutes;
+    private VDTimeUnit setMinutes(long minutes) {
+        this.minutes = minutes;
+        return this;
+    }
+    public long getMinutes() {
+        return minutes;
+    }
+
+    private long hours;
+    private VDTimeUnit setHours(long hours) {
+        this.hours = hours;
+        return this;
+    }
+    public long getHours() {
+        return hours;
+    }
+
+    /* Overrides */
+    @Override
+    public String toString() {
+        return convertToString(VDTimeCategory.Hour, VDTimeCategory.Millisecond);
+    }
+
+    /* Enums */
     public enum VDTimeCategory {
         Hour, Minute, Second, Millisecond
     }
