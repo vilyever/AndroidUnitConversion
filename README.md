@@ -19,22 +19,23 @@ Step 2. Add the dependency in the form
 
 ```gradle
 dependencies {
-  compile 'com.github.vilyever:AndroidUnitConversion:1.0.2'
+  compile 'com.github.vilyever:AndroidUnitConversion:1.0.3'
 }
 ```
 
 ## Usage
 ```java
 
-VDTimeUnit timeUnit = new VDTimeUnit(41891564);
-System.out.println("time " + timeUnit);
-System.out.println("time " + timeUnit.toString(VDTimeUnit.VDTimeCategory.Hour, VDTimeUnit.VDTimeCategory.Millisecond));
-System.out.println("time " + timeUnit.toString(VDTimeUnit.VDTimeCategory.Second, VDTimeUnit.VDTimeCategory.Hour));
+System.out.println("from Milliseconds to Minutes " + TimeConverter.convertMillisecondsToMinutes(41891564l));
+System.out.println("from Milliseconds to String " + TimeConverter.convertMillisecondsToString(41891564l, TimeConverter.TimeUnits.Hour, TimeConverter.TimeUnits.Millisecond));
+System.out.println("from Milliseconds to String  " + TimeConverter.convertMillisecondsToString(41891564l, TimeConverter.TimeUnits.Hour, TimeConverter.TimeUnits.Millisecond));
 
-int px = VDDimenConversion.dpToPixel(18);
-int dp = VDDimenConversion.pixelToDp(18);
-px = VDDimenConversion.spToPixel(18);
-int sp = VDDimenConversion.pixelToSp(18);
+int px = DimenConverter.dpToPixel(18);
+int dp = DimenConverter.pixelToDp(px);
+System.out.println("px " + px + " : dp " + dp);
+px = DimenConverter.spToPixel(20);
+int sp = DimenConverter.pixelToSp(px);
+System.out.println("px " + px + " : sp " + sp);
 ```
 
 ## License
