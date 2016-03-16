@@ -2,16 +2,16 @@ package com.vilyever.unitconversion;
 
 import android.util.DisplayMetrics;
 
-import com.vilyever.contextholder.VDContextHolder;
+import com.vilyever.resource.Resource;
 
 /**
- * VDDimenConversion
+ * DimenConverter
  * AndroidUnitConversion <com.vilyever.vdunitconversion>
  * Created by vilyever on 2015/9/15.
  * Feature:
  */
-public class VDDimenConversion {
-    private final VDDimenConversion self = this;
+public class DimenConverter {
+    private final DimenConverter self = this;
 
     /* Public Methods */
     /**
@@ -20,8 +20,7 @@ public class VDDimenConversion {
      * @return dp
      */
     public static int pixelToDp(int pixel) {
-        DisplayMetrics displayMetrics = VDContextHolder.getContext().getResources()
-                .getDisplayMetrics();
+        DisplayMetrics displayMetrics = Resource.getDisplayMetrics();
         return (int) ((pixel / displayMetrics.density) + 0.5);
     }
 
@@ -31,8 +30,7 @@ public class VDDimenConversion {
      * @return px
      */
     public static int dpToPixel(int dip) {
-        DisplayMetrics displayMetrics = VDContextHolder.getContext().getResources()
-                .getDisplayMetrics();
+        DisplayMetrics displayMetrics = Resource.getDisplayMetrics();
         return (int) ((dip * displayMetrics.density) + 0.5);
     }
 
@@ -42,8 +40,7 @@ public class VDDimenConversion {
      * @return sp
      */
     public static int pixelToSp(int pixel) {
-        DisplayMetrics displayMetrics = VDContextHolder.getContext().getResources()
-                .getDisplayMetrics();
+        DisplayMetrics displayMetrics = Resource.getDisplayMetrics();
         return (int) ((pixel / displayMetrics.scaledDensity) + 0.5);
     }
 
@@ -53,8 +50,7 @@ public class VDDimenConversion {
      * @return px
      */
     public static int spToPixel(int sp) {
-        DisplayMetrics displayMetrics = VDContextHolder.getContext().getResources()
-                .getDisplayMetrics();
+        DisplayMetrics displayMetrics = Resource.getDisplayMetrics();
         return (int) ((sp * displayMetrics.scaledDensity) + 0.5);
     }
 }
